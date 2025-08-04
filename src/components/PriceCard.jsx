@@ -3,7 +3,7 @@ import React from 'react';
 const PriceCard = ({ plan, gradientColor }) => {
   const hoverColor = `#${gradientColor}`;
   return (
-    <div className="relative overflow-hidden text-left bg-secondary rounded-3xl border border-[#5B5B5B] w-full max-w-sm h-[550px] p-7 flex-shrink-0">
+    <div className="relative overflow-hidden text-left bg-secondary rounded-3xl border border-[#5B5B5B] w-full max-w-sm h-auto md:h-[550px] p-7 flex-shrink-0">
       {/* Gradient - custom color for each card */}
       <div
         aria-hidden="true"

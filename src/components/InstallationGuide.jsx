@@ -150,12 +150,12 @@ function InstallationGuide() {
             </button>
 
             {/* Progress Indicators */}
-            <div className="flex space-x-2">
+            <div className="flex space-x-1 md:space-x-2">
               {installationSteps.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToStep(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
+                  className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
                     index === currentStep
                       ? 'bg-primary'
                       : index < currentStep

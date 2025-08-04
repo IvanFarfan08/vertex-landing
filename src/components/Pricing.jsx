@@ -14,7 +14,7 @@ const Pricing = () => {
         </div>
         
         {/* Price Cards */}
-        <div className="flex justify-center gap-8 flex-nowrap flex-1 items-center overflow-x-auto">
+        <div className="flex flex-col md:flex-row md:justify-center gap-6 md:gap-8 md:flex-nowrap flex-1 md:items-center overflow-y-auto md:overflow-x-auto pb-6 md:pb-0">
           <PriceCard 
             plan={content.pricing.plans[0]} 
             gradientColor="EB25CE"

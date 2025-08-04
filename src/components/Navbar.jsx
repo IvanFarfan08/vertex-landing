@@ -124,7 +124,18 @@ const Navbar = () => {
                 onBlur={() => setTimeout(() => setShowUserMenu(false), 200)}
                 className="bg-primary text-black hover:bg-primary/80 py-2 px-6 rounded-[8px] font-source-code-pro text-[14px] transition-colors duration-200 flex items-center gap-2"
               >
-                {getUserDisplayName(user)}
+                {/* Mobile: Show icon only */}
+                <div className="md:hidden flex items-center">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                  </svg>
+                </div>
+                
+                {/* Desktop: Show email/username */}
+                <span className="hidden md:inline">
+                  {getUserDisplayName(user)}
+                </span>
+                
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>

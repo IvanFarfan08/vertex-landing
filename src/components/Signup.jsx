@@ -68,19 +68,27 @@ function Signup() {
   return (
     <div className="px-4 py-0.5 max-w-screen-2xl mx-auto h-[calc(100vh-120px)]">
       <div className="relative overflow-hidden bg-secondary rounded-2xl h-full flex border border-[#5B5B5B]">
-        {/* Left section with gradient - 33% */}
-        <div className="relative w-1/3 h-full overflow-hidden">
+        {/* Left section with gradient - 33% on desktop, hidden on mobile */}
+        <div className="hidden md:block relative w-1/3 h-full overflow-hidden">
           <div
             aria-hidden="true"
             className="absolute top-1/2 -left-1/2 -translate-y-1/2 w-full h-1/2 bg-primary rounded-full blur-[150px]"
           />
         </div>
         
-        {/* Vertical divider */}
-        <div className="w-[1px] h-full bg-[#5B5B5B]" />
+        {/* Vertical divider - only on desktop */}
+        <div className="hidden md:block w-[1px] h-full bg-[#5B5B5B]" />
         
-        {/* Right section with form - 66% */}
-        <div className="relative flex-1 h-full flex items-center justify-center">
+        {/* Mobile gradient - full width, only on mobile */}
+        <div className="md:hidden absolute inset-0 overflow-hidden">
+          <div
+            aria-hidden="true"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-1/2 bg-primary rounded-full blur-[150px]"
+          />
+        </div>
+        
+        {/* Right section with form - 66% on desktop, full width on mobile */}
+        <div className="relative flex-1 h-full flex items-center justify-center z-10">
           <div className="max-w-md w-full px-8 space-y-8">
             <div>
               <h2 className="text-center text-3xl font-extrabold text-white font-sora">
@@ -168,7 +176,7 @@ function Signup() {
                     <div className="w-full border-t border-white/10"></div>
                   </div>
                   <div className="relative flex justify-center text-sm">
-                    <span className="px-2 bg-secondary text-gray-400 font-sora">
+                    <span className="px-2 md:bg-secondary text-gray-400 font-sora">
                       Or continue with
                     </span>
                   </div>
