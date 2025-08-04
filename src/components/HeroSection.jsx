@@ -57,6 +57,14 @@ const HeroSection = () => {
   }, [videoState]);
 
   useEffect(() => {
+    // Check if device is mobile (screen width < 768px)
+    const isMobile = window.innerWidth < 768;
+    
+    // Only add scroll behavior for non-mobile devices
+    if (isMobile) {
+      return; // Exit early for mobile devices
+    }
+    
     let isScrolling = false;
     
     const handleScroll = () => {
