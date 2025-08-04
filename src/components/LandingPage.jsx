@@ -3,7 +3,11 @@ import HeroSection from './HeroSection';
 
 const LandingPage = () => {
   return (
-    <HeroSection />
+    <div>
+      <HeroSection />
+      <div className="h-screen bg-black">
+      </div>
+    </div>
   );
 };
 
