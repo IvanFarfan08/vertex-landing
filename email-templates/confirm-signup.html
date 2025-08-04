@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirm Your Account - Vertex 3D</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Sora', sans-serif;
+            background-color: #201C1C;
+            color: #D0D0D0;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #201C1C;
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background-color: #201C1C;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            bottom: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 50%;
+            background-color: #9DD089;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.6;
+            z-index: 1;
+        }
+        
+        .header .logo {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+        
+        .content {
+            padding: 40px 30px;
+            background-color: #201C1C;
+            border: 1px solid rgba(108, 117, 125, 0.2);
+            border-top: none;
+        }
+        
+        .greeting {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+        
+        .message {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #D0D0D0;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #9DD089;
+            color: #000;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 16px 32px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #8BC775;
+        }
+        
+        .alternative-link {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: rgba(157, 208, 137, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(108, 117, 125, 0.2);
+        }
+        
+        .alternative-link p {
+            font-size: 14px;
+            color: #D0D0D0;
+            margin-bottom: 10px;
+        }
+        
+        .alternative-link code {
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 12px;
+            color: #6C757D;
+            word-break: break-all;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid rgba(157, 208, 137, 0.2);
+        }
+        
+        .footer a {
+            color: #6C757D;
+            text-decoration: none;
+        }
+        
+        .feature-highlight {
+            background: linear-gradient(135deg, rgba(108, 117, 125, 0.1) 0%, rgba(90, 98, 104, 0.1) 100%);
+            border: 1px solid rgba(108, 117, 125, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-highlight h3 {
+            color: #6C757D;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .feature-highlight p {
+            color: #D0D0D0;
+            font-size: 14px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://i.imgur.com/sRxdRNJ.png" alt="Vertex 3D Logo" />
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="greeting">Welcome to Vertex 3D!</div>
+            
+            <div class="message">
+                Thank you for creating your Vertex 3D account! We're excited to have you as part of our community of 3D artists and designers.
+            </div>
+            
+            <div class="message">
+                To complete your registration and secure your account, please verify your email address. This is a standard security measure to protect your account.
+            </div>
+            
+            <div style="text-align: center;">
+                <a href="{{ .ConfirmationURL }}" class="cta-button">VERIFY EMAIL ADDRESS</a>
+            </div>
+            
+            <div class="message">
+                <small><strong>Security Note:</strong> This verification link was sent from our secure servers at vertex3d.ai and will expire in 24 hours. Only click this link if you created an account with us.</small>
+            </div>
+            
+            <div class="alternative-link">
+                <p><strong>Button not working?</strong> You can also verify by copying this secure link to your browser:</p>
+                <code>{{ .ConfirmationURL }}</code>
+                <p><small>This link is unique to your account and can only be used once.</small></p>
+            </div>
+            
+            <div class="message">
+                This confirmation link will expire in 24 hours for security reasons.
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>This email was sent to {{ .Email }}</p>
+            <p>If you didn't create an account with Vertex 3D, you can safely ignore this email.</p>
+            <p>Need help? Contact us at <a href="mailto:contact@vertex3d.ai">contact@vertex3d.ai</a></p>
+        </div>
+    </div>
+</body>
+</html>

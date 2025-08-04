@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-source-code-pro: "Source Code Pro", monospace;
+  --font-sora: "Sora", sans-serif;
+  --color-primary: #9DD089;
+  --color-secondary: #201C1C;
+  --color-gray-text: #D0D0D0;
+}
+
+body {
+  margin: 0; /* Tailwind Preflight also handles this */
+  min-height: 100vh;
+  /* Default background and text colors will be handled by Tailwind's Preflight
+     or can be set via Tailwind classes on the body/html tag in index.html
+     or configured in tailwind.config.js if a global override is desired. */
+}
+
+#root {
+  min-height: 100vh;
+}
