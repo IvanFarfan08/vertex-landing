@@ -2,7 +2,7 @@
 export const content = {
   hero: {
     title: "One Link. One Click. Instant Blueprints.",
-    subtitle: "Turn any GTA5 vehicle mod into detailed 3D blueprints for your Blender projects in minutes",
+    subtitle: "Turn any vehicle mod into detailed 3D blueprints for your Blender projects in minutes",
     ctaButton: "LEARN MORE",
     videoPlaceholder: "Video Placeholder",
     videoId: "ab9a2d03d78c6383ebe4d5230f5b6e14"
